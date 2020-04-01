@@ -1,0 +1,72 @@
+.data
+  &
+    background: url('../img/video-bg.jpg')
+    height: 45.21rem
+    padding-top: 2rem
+  &__chart
+    background-color: white
+    background: white url('../img/chart.png') no-repeat center / cover
+    background-size: 878px 239px
+    margin: auto
+    display: flex
+    justify-content: space-around
+    box-shadow: 0 0 22px 5px rgba(34, 34, 34, 0.05)
+    padding: 40px 30px 75px 23px
+    margin-top: -11rem
+  &__col
+    &--right
+      margin-right: 1rem
+    &--left
+      margin-right: 2rem
+    &--number
+      font-size: 4.42rem
+      font-weight: 700
+      line-height: 5.93rem
+      letter-spacing: -3.1px
+      color: $red
+      text-align: center
+      margin-bottom: 0
+    &--text
+      font-size: 1.57rem
+      font-weight: 700
+      line-height: 2.66rem
+      letter-spacing: -0.44px
+      text-align: center
+      margin-top: 0
+    &--textright
+      font-size: 1.57rem
+      font-weight: 700
+      line-height: 2.66rem
+      letter-spacing: -0.44px
+      text-align: center
+      margin-top: 0
+      padding-left: 1rem
+  &__play
+    &--img
+      position: relative
+  &__video
+    &--play
+      &
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 93px
+        height: 93px
+        background: #d9d9d8
+        opacity: 0.9
+        border-radius: 50%
+        border: none
+        position: relative
+        margin: auto
+        margin-top: 9.4rem
+      &::before
+        content: ''
+        width: 122px
+        height: 122px
+        background: #090909
+        opacity: 0.35
+        position: absolute
+        border-radius: 50%
+        left: -15px
+        top: -15px
+        animation: pulse 1s ease-in-out 1s infinite
