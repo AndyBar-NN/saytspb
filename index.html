@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="img/icons/favicon.ico">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -30,16 +31,16 @@
             </div>
             <nav class="nav">
               <div class="menu__nav">
-                <a href="#hero" class="nav__item">Продвижение</a>
-                <a href="#advantages" class="nav__item">Аудит</a>
+                <a href="#data" class="nav__item">Продвижение</a>
+                <a href="#services" class="nav__item">Аудит</a>
                 <a href="#price" class="nav__item">Цены</a>
-                <a href="#contacts" class="nav__item">Контакты</a>
+                <a href="#footer" class="nav__item">Контакты</a>
               </div>
               <div class="phone">
                 <a href="tel:+79997683299" class="phone contacts__phone">+7(812)-992-10-30</a>
               </div>
               <div class="contacts menu__contacts">
-                <button class="button contacts__button">Заказать звонок</button>
+                <button class="button contacts__button" data-toggle="modal">Заказать звонок</button>
               </div>
             </nav>
           </div>
@@ -53,7 +54,7 @@
         <div class="hero__content">
           <h1 class="title hero__title">Продвижение Сайтов&nbsp;<br><span class="hero__title--red">в Санкт-Петербурге</span></h1>
           <p class="hero__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
-          <button class="button hero__button">Обратный звонок</button>
+          <button class="button hero__button" data-toggle="modal">Обратный звонок</button>
         </div>
         <!-- hero__content -->
         <div class="hero__img">
@@ -64,7 +65,7 @@
     </section>
     <!-- /.hero -->
 
-    <section class="data">
+    <section class="data" id="data">
       <div class="container">
         <div class="data__chart">
           <div class="data__col--left">
@@ -139,7 +140,7 @@
     </div>
     <!-- /.advantages -->
 
-    <div class="services">
+    <div class="services" id="services">
       <div class="container">
         <div class="services__hero">
           <h2 class="container__title container__title--services">Наши Услуги</h2>
@@ -177,7 +178,7 @@
       <!-- /.container -->
     </div>
     <!-- /.services -->
-    <div class="price">
+    <div class="price" id="price">
       <div class="container">
         <div class="price__form">
           <h3 class="price__title">Узнать стоимость</h3>
@@ -187,18 +188,18 @@
               <input type="text" name="userName" class="input form__input price__input input--light" id="user-name-price" placeholder="Иван Иванов">
             </div>
             <div class="price__input">
-              <label for="user-phone" class="label form__label label--light">E-mail</label>
-              <input type="tel" name="userPhone" class="input form__input price__input input--light" id="user-phone-price" placeholder="ivanov@gmail.com">
+              <label for="user-mail" class="label form__label label--light">E-mail</label>
+              <input type="email" name="userEmail" class="input form__input price__input input--light" id="user-email-price" placeholder="ivanov@gmail.com">
             </div>
             <div class="price__input">
               <label id="user-mail" class="label form__label label--light">Адрес веб-сайта</label>
-              <input type="email" name="userEmail" class="input form__input price__input input--light" id="user-email-price" placeholder="tatsianapavlenko.ru">
+              <input type="text" name="userLink" class="input form__input price__input input--light" id="user-link-price" placeholder="tatsianapavlenko.ru">
             </div>
             <div class="price__input price__input--group">
-              <label for="user-question" class="label form__label label--light">Сообщение</label>
-              <input type="text" name="userQuestion" class="input form__input price__input input--light" id="user-question" placeholder="Введите Ваше сообщение">
+              <label for="user-message" class="label form__label label--light">Сообщение</label>
+              <input type="text" name="userMessage" class="input form__input price__input input--light" id="user-message" placeholder="Введите Ваше сообщение">
             </div>
-            <button class="button price__button">Узнать стоимость</button>
+            <button class="button price__button" data-toggle="modal__feedback">Узнать стоимость</button>
           </form>
           <div class="price__img">
             <img src="img/bg4.png" alt="#">
@@ -214,7 +215,106 @@
       <div class="container">
         <div class="cases__hero">
           <h2 class="container__title">Наши Кейсы</h2>
-          <p class="container__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ex.</p>
+          <p class="container__text container__text--cases">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ex.</p>
+
+          <div class="swiper-container swiper-container__cases">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide cases__slide">
+                <div class="cases__review">
+                  <div class="cases__block">
+                    <h2 class="cases__title">Ремонт телефонов</h2>
+                    <div class="cases__row">
+                      <div class="cases__col-cases1">
+                        <h3 class="col-cases1 col-cases1__title">Результат за 4 месяца:</h3>
+                        <span class="col-cases1">+11 запросов у Яндекса, +10 у Google в топ-3</span>
+                        <span class="col-cases1">+42 запросов у Яндекса, +55 у Google в топ-5</span>
+                        <span class="col-cases3">+74 запросов у Яндекса, +119 у Google в топ-10</span>
+                        <h3 class="col-cases1 col-cases1__title">Динамика улучшения видимости сайта:</h3>
+                        <span class="col-cases1__title1">Посмотреть позиции до и после >></span>
+                        <h3 class="col-cases1 col-cases1__title">Услуги:</h3>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Технический SEO аудит</span>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Оптимизация сайта</span>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Юзабилити аудит</span>
+                      </div>
+                      <!-- /.cases__col-cases1  -->
+                      <div class="cases__col-cases2">
+                        <h3 class="col-cases2">Статистика кол-ва переходов из поисковых систем</h3>
+                        <h4 class="col-cases2__title">Источник: Яндекс Метрика</h4>
+                        <img src="img/chart-metrica.png" alt="">
+                      </div>
+                      <!-- /.cases__col-cases2 -->
+                    </div>
+                  </div>
+                </div>
+                <!-- /.cases__review -->
+              </div>
+              <div class="swiper-slide cases__slide">
+                <div class="cases__review">
+                  <div class="cases__block">
+                    <h2 class="cases__title">Ремонт телефонов</h2>
+                    <div class="cases__row">
+                      <div class="cases__col-cases1">
+                        <h3 class="col-cases1 col-cases1__title">Результат за 4 месяца:</h3>
+                        <span class="col-cases1">+11 запросов у Яндекса, +10 у Google в топ-3</span>
+                        <span class="col-cases1">+42 запросов у Яндекса, +55 у Google в топ-5</span>
+                        <span class="col-cases3">+74 запросов у Яндекса, +119 у Google в топ-10</span>
+                        <h3 class="col-cases1 col-cases1__title">Динамика улучшения видимости сайта:</h3>
+                        <span class="col-cases1__title1">Посмотреть позиции до и после >></span>
+                        <h3 class="col-cases1 col-cases1__title">Услуги:</h3>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Технический SEO аудит</span>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Оптимизация сайта</span>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Юзабилити аудит</span>
+                      </div>
+                      <!-- /.cases__col-cases1  -->
+                      <div class="cases__col-cases2">
+                        <h3 class="col-cases2">Статистика кол-ва переходов из поисковых систем</h3>
+                        <h4 class="col-cases2__title">Источник: Яндекс Метрика</h4>
+                        <img src="img/chart-metrica.png" alt="">
+                      </div>
+                      <!-- /.cases__col-cases2 -->
+                    </div>
+                  </div>
+                </div>
+                <!-- /.cases__review -->
+              </div>
+              <div class="swiper-slide cases__slide">
+                <div class="cases__review">
+                  <div class="cases__block">
+                    <h2 class="cases__title">Ремонт телефонов</h2>
+                    <div class="cases__row">
+                      <div class="cases__col-cases1">
+                        <h3 class="col-cases1 col-cases1__title">Результат за 4 месяца:</h3>
+                        <span class="col-cases1">+11 запросов у Яндекса, +10 у Google в топ-3</span>
+                        <span class="col-cases1">+42 запросов у Яндекса, +55 у Google в топ-5</span>
+                        <span class="col-cases3">+74 запросов у Яндекса, +119 у Google в топ-10</span>
+                        <h3 class="col-cases1 col-cases1__title">Динамика улучшения видимости сайта:</h3>
+                        <span class="col-cases1__title1">Посмотреть позиции до и после >></span>
+                        <h3 class="col-cases1 col-cases1__title">Услуги:</h3>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Технический SEO аудит</span>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Оптимизация сайта</span>
+                        <span class="col-cases1"><img class="rightgreen" src="img/rightgreen.svg" alt=""> Юзабилити аудит</span>
+                      </div>
+                      <!-- /.cases__col-cases1  -->
+                      <div class="cases__col-cases2">
+                        <h3 class="col-cases2">Статистика кол-ва переходов из поисковых систем</h3>
+                        <h4 class="col-cases2__title">Источник: Яндекс Метрика</h4>
+                        <img src="img/chart-metrica.png" alt="">
+                      </div>
+                      <!-- /.cases__col-cases2 -->
+                    </div>
+                  </div>
+                </div>
+                <!-- /.cases__review -->
+              </div>
+            </div>
+
+            <div class="swiper-button-prev swiper-button-prev__casesleft"></div>
+            <div class="swiper-button-next swiper-button-next__casesright"></div>
+
+          </div>
+          <div class="cases__hero--button">
+            <button class="button button__cases">Портфолио</button>
+          </div>
         </div>
         <!-- /.cases__hero -->
       </div>
@@ -225,8 +325,63 @@
     <div class="feedback">
       <div class="container">
         <div class="feedback__hero">
-          <h2 class="container__title">Отзывы клиентов</h2>
-          <p class="container__text">Если Вы хотите оставить отзыв о проделаной работе, какие-нибудь пожелания или свои впечатления, то можете это сделать, написав на <a class="feedback__link" href="#">почту</a> или <a class="feedback__link" href="#">Вконтакте</a></p>
+          <h2 class="container__title container__title--feedback">Отзывы клиентов</h2>
+          <p class="container__text container__text--feedback">Если Вы хотите оставить отзыв о проделаной работе, какие-нибудь пожелания или свои впечатления, то можете это сделать, написав на <a class="feedback__link" href="#">почту</a> или <a class="feedback__link" href="#">Вконтакте</a></p>
+
+          <div class="swiper-container swiper-container__feedback">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide feedback__slide">
+                <p class="feedback__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <div class="feedback__block">
+                  <div class="feedback__icon">
+                    <img src="img/client.png" alt="client">
+                  </div>
+                  <div class="feedback__text">
+                    <h4 class="feedback__text--bord">Иванна Иванова</h4>
+                    <h5 class="feedback__text--regular">Сбербанк, CEO</h5>
+                  </div>
+                </div>
+                <div class="feedback__button">
+                  <button class="button button__reading">Читать ещё</button>
+                </div>
+              </div>
+              <div class="swiper-slide feedback__slide">
+                <p class="feedback__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <div class="feedback__block">
+                  <div class="feedback__icon">
+                    <img src="img/client.png" alt="client">
+                  </div>
+                  <div class="feedback__text">
+                    <h4 class="feedback__text--bord">Иванна Иванова</h4>
+                    <h5 class="feedback__text--regular">Сбербанк, CEO</h5>
+                  </div>
+                </div>
+                <div class="feedback__button">
+                  <button class="button button__reading">Читать ещё</button>
+                </div>
+              </div>
+              <div class="swiper-slide feedback__slide">
+                <p class="feedback__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <div class="feedback__block">
+                  <div class="feedback__icon">
+                    <img src="img/client.png" alt="client">
+                  </div>
+                  <div class="feedback__text">
+                    <h4 class="feedback__text--bord">Иванна Иванова</h4>
+                    <h5 class="feedback__text--regular">Сбербанк, CEO</h5>
+                  </div>
+                </div>
+                <div class="feedback__button">
+                  <button class="button button__reading">Читать ещё</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev swiper-button-prev__feedbackleft"></div>
+            <div class="swiper-button-next swiper-button-next__feedbackright"></div>
+
+          </div>
+
         </div>
         <!-- /.feedback__hero -->
       </div>
@@ -235,10 +390,55 @@
     <!-- /.feedback -->
 
     <div class="news">
-      <div class="container">
+      <div class="news__container">
         <div class="news__hero">
           <h2 class="container__title news__title">Последние новости</h2>
           <p class="container__text news__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ex.</p>
+
+          <div class="swiper-container">
+            <div class="swiper-wrapper swiper-no-swiping">
+              <div class="swiper-slide">
+                <img class="img" src="img/slide3.jpg" alt="photo">
+              </div>
+              <div class="swiper-slide">
+                <img class="img" src="img/slide3.jpg" alt="photo">
+              </div>
+              <div class="swiper-slide">
+                <img class="img" src="img/slide3.jpg" alt="photo">
+              </div>
+            </div>
+            <!-- /.swiper-wrapper -->
+          </div>
+          <!-- /.swiper-container -->
+
+          <div class="col2">
+            <div class="swiper-container">
+              <div class="swiper-wrapper swiper-no-swiping">
+                <div class="swiper-slide">
+                  <div class="swiper-slide news-slide__heading">
+                    <h3 class="news-slide__title">Важнейшие факторы SEO в 2019 году</h3>
+                    <p class="news-slide__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                    <button class="button button__read">Читать далее</button>
+                  </div>
+                </div>
+                <div class="swiper-slide news-slide__heading">
+                  <h3 class="news-slide__title">Важнейшие факторы SEO в 2019 году</h3>
+                  <p class="news-slide__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                  <button class="button button__read">Читать далее</button>
+                </div>
+                <div class="swiper-slide news-slide__heading">
+                  <h3 class="news-slide__title">Важнейшие факторы SEO в 2019 году</h3>
+                  <p class="news-slide__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                  <button class="button button__read">Читать далее</button>
+                </div>
+              </div>
+              <!-- /.swiper-wrapper -->
+            </div>
+            <!-- /.swiper-container -->
+          </div>
+          <!-- /.col2 -->
+          <div class="swiper-button-prev swiper-button-prev__newsleft"></div>
+          <div class="swiper-button-next swiper-button-next__newsright"></div>
         </div>
         <!-- /.news__hero -->
       </div>
@@ -246,7 +446,7 @@
     </div>
     <!-- /.news -->
 
-    <div class="footer">
+    <div class="footer" id="footer">
       <div class="footer__container">
         <div class="footer__hero">
           <div class="footer__col-1">
@@ -282,10 +482,10 @@
                 <input type="tel" name="userPhone" class="input form__input footer__input input--light" id="user-phone-footer" placeholder="+7 999 888-88-88">
               </div>
               <div class="footer__input footer__input--group">
-                <label for="user-question" class="label form__label label--light">Сообщение</label>
-                <input type="text" name="userQuestion" class="input form__input footer__input input--light" id="user-question" placeholder="Введите Ваше сообщение">
+                <label for="user-message" class="label form__label label--light">Сообщение</label>
+                <input type="text" name="userMessage" class="input form__input footer__input input--light" id="user-message" placeholder="Введите Ваше сообщение">
               </div>
-              <button class="button footer__button">Отправить</button>
+              <button class="button footer__button" data-toggle="modal__feedback">Отправить</button>
             </form>
           </div>
           <!-- /.footer__col-2 -->
@@ -300,8 +500,33 @@
       </div>
     </div>
     <!-- /.footer -->
+
   </main>
+  <div class="modal">
+    <div class="modal__dialog">
+      <button class="modal__close"></button>
+      <form action="send.php" method="POST" class="form modal__form">
+      <div class="modal__input">
+        <label for="user-name" class="label form__label label--light">Имя</label>
+        <input type="text" name="userName" class="input form__input modal__input input--light" id="user-name-modal" placeholder="Иван Иванов">
+      </div>
+      <div class="modal__input">
+        <label for="user-phone" class="label form__label label--light">Телефон</label>
+        <input type="tel" name="userPhone" class="input form__input modal__input input--light" id="user-phone-modal" placeholder="+7 999 888-88-88">
+      </div>
+    </form>
+    </div>
+  </div>
+
+  <div class="modal__feedback">
+
+  </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.mask.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/main.js"></script>
 </body>

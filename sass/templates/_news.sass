@@ -1,8 +1,79 @@
+// .block
+//   display: flex
+//   align-items: flex-start
+//   justify-content: center
+// .col1
+//   &
+//     width: 35%
+//   &__img
+//     max-width: 100%
+//     width: 800px
+.col2
+  position: absolute
+  width: 550px
+  height: 339px
+  right: 26.4rem
+  top: 692.5%
 .news
   &
     background-color: $lime
     height: 896px
+    margin-top: -2.5rem
+  &__container
+    width: 85%
+    max-width: 1170px
+    margin: auto
   &__title
     padding-top: 4.1rem
+    margin-bottom: 2rem
+    margin-left: 1.7rem
   &__text
     width: 795px
+    margin-bottom: 4.07rem
+  &-slide
+    &
+      display: flex
+      flex-wrap: wrap
+      justify-content: flex-start
+    &__heading
+      background: white
+      padding: 0.12rem 3rem 3rem 2.7rem
+      padding-bottom: 2.7rem
+      padding-left: 2.7rem
+      padding-right: 3rem
+      box-shadow: 0 0 10px 3px rgba(34, 34, 34, 0.05)
+      border-radius: 5px
+    &__title
+      font-size: 1.42rem
+      font-weight: 500
+      line-height: 18px
+      padding-top: 1.1rem
+    &__text
+      font-size: 1.14rem
+      font-weight: 300
+      line-height: 26.33px
+      padding-top: 0.5rem
+      letter-spacing: -0.11px
+.swiper
+  &-button
+    &-prev__newsleft, &-next__newsright
+      &
+        left: 0
+        top: 724.5%
+        outline: none
+      &::after
+        display: none
+    &-prev__newsleft
+      width: 56.5rem
+      height: 25px
+      background: url('../img/arrow.svg') no-repeat center
+    &-next__newsright
+      width: 67rem
+      height: 24px
+      background: url('../img/arrow.svg') no-repeat center
+      transform: rotate(180deg)
+.button
+  &
+    &__read
+      margin-top: 1.65rem
+      padding: 16px 60px 16px 60px
