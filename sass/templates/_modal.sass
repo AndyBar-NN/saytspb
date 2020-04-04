@@ -19,9 +19,8 @@
     visibility: visible
   &__dialog
     position: relative
-    max-width: 36.36rem
     background: white
-    padding: 2.357rem 3.5rem 1.928rem
+    padding: 41px 43px 15px 47px
     color: white
   &__close
     outline: none
@@ -30,28 +29,69 @@
     top: 0
     width: 28px
     height: 28px
-    background: transparent url('../img/x-circle.svg') no-repeat  center
+    background: url('../img/close.svg') no-repeat  center
     border: none
     margin: 12px
     cursor: pointer
-  &__title
-    font-size: 1.357rem
-    line-height: 1.85rem
-    font-weight: normal
-    text-align: center
-    margin: 0
-    margin-bottom: 2.05rem
   &__form
     display: flex
     flex-direction: column
+    justify-content: center
+  &__label
+
   &__input
     &
-      outline: none
-    &-group
+      border: 1px solid
+      border-radius: 10px
+      padding: 9px 18px 10px 13px
+    &--small
       display: flex
       flex-direction: column
-      margin-bottom: 3.3rem
   &__button
     outline: none
-    align-self: flex-end
-    padding: 17px 49px
+    align-self: center
+    margin-bottom: 0.78rem
+    padding: 13px 53px 13px 53px
+    margin-top: 0.55rem
+    margin-bottom: 1.65rem
+.thanks
+  &
+    visibility: hidden
+    position: fixed
+    z-index: 100
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0
+    width: 100%
+    height: 100%
+    background-color: rgba($dark, 0.6)
+    display: flex
+    align-items: center
+    justify-content: center
+    display: none
+  &__dialog
+    position: relative
+    background: white
+    padding: 41px 43px 15px 47px
+  &__feedback
+    &
+    &--title
+      width: 300px
+      height: 166px
+      font-size: 1.357rem
+      font-weight: normal
+      text-align: center
+      margin: 0
+      margin-bottom: 2.428rem
+  &__close
+    outline: none
+    position: absolute
+    right: 0
+    top: 0
+    width: 28px
+    height: 28px
+    background: url('../img/close.svg') no-repeat  center
+    border: none
+    margin: 12px
+    cursor: pointer

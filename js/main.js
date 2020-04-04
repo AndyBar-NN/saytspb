@@ -1,28 +1,28 @@
-// $(document).ready(function (){
-// var modal = $('.modal'),
-//   modalBtn = $('[data-toggle=modal]'),
-//   closeBtn = $('.modal__close');
-//   modalBtn.on('click', function () {
-//     modal.toggleClass('modal--visible');
-//   });
-//   closeBtn.on('click', function () {
-//     modal.toggleClass('modal--visible');
-//   });
-// });
+$(document).ready(function (){
+var modal = $('.modal'),
+  modalBtn = $('[data-toggle=modal]'),
+  closeBtn = $('.modal__close');
+  modalBtn.on('click', function () {
+    modal.toggleClass('modal--visible');
+  });
+  closeBtn.on('click', function () {
+    modal.toggleClass('modal--visible');
+  });
+});
 
-// $(document).ready(function (){
-//   var feedback = $('.feedback'),
-//   feedbackBtn = $('[data-toggle=feedback]'),
-//   closeBtn = $('.feedback__close');
-//   feedbackBtn.on('click', function () {
-//     feedback.toggleClass('feedback--visible');
-//   });
-//   closeBtn.on('click', function () {
-//     feedback.toggleClass('feedback--visible');
-//   });
-// });
+$(document).ready(function (){
+  var thanks = $('.thanks'),
+  thanksBtn = $('[data-toggle=thanks]'),
+  closeBtn = $('.thanks__close');
+  thanksBtn.on('click', function () {
+    thanks.toggleClass('thanks--visible');
+  });
+  closeBtn.on('click', function () {
+    thanks.toggleClass('thanks--visible');
+  });
+});
 
-// new WOW().init();
+new WOW().init();
 
 //Smooth Scrolling Using Navigation Menu
 $('a[href*="#"]').on('click', function(e){
@@ -86,8 +86,9 @@ $('.modal__form').validate({
       data: $(form).serialize(),
       success: function(response) {
         $(form)[0].reset();
-        $('.feedback').fadeIn();
-        $('.feedback').css('display', 'flex');
+        $('.modal--visible').fadeOut();
+        $('.thanks').fadeIn();
+        $('.thanks').css('display', 'flex');
       },
       error: function(response) {
         console.error('Ошибка запроса' + response);
@@ -135,8 +136,8 @@ $('.footer__form').validate({
       data: $(form).serialize(),
       success: function(response) {
         $(form)[0].reset();
-        $('.feedback').fadeIn();
-        $('.feedback').css('display', 'flex');
+        $('.thanks').fadeIn();
+        $('.thanks').css('display', 'flex');
       },
       error: function(response) {
         console.error('Ошибка запроса' + response);
@@ -159,6 +160,7 @@ $('.price__form').validate({
     },
     userLink: {
       required: true,
+      url: true
     },
     userPhone: "required",
     // compound rule
@@ -177,6 +179,7 @@ $('.price__form').validate({
     },
     userLink: {
       required: "Заполните поле",
+      url: "Введите корректную ссылку: http://"
     },
     userMessage: {
       required: "Заполните поле",
@@ -189,8 +192,8 @@ $('.price__form').validate({
       data: $(form).serialize(),
       success: function(response) {
         $(form)[0].reset();
-        $('.feedback').fadeIn();
-        $('.feedback').css('display', 'flex');
+        $('.thanks').fadeIn();
+        $('.thanks').css('display', 'flex');
       },
       error: function(response) {
         console.error('Ошибка запроса' + response);

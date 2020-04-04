@@ -17,9 +17,10 @@
   &__hero
     margin-top: 6rem
   &__block
-    display: flex
-    flex-wrap: wrap
-    align-items: baseline
+    &
+      display: flex
+      flex-wrap: wrap
+      align-items: baseline
   &__col
     &
       width: 355px
@@ -29,12 +30,8 @@
       background-color: white
       padding: 43px 40px 43px 35px
       margin-right: 51px
-    &::hover
-      width: 355px
-      height: 310px
-      box-shadow: 0 0 10px 3px rgba(34, 34, 34, 0.05)
-      border-radius: 5px
-      background-color: red
+    &:hover
+      border-bottom: 6px solid red
     &--title
       width: 273px
       font-size: 1.85rem
