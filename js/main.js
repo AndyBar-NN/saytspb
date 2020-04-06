@@ -50,16 +50,38 @@ $('a[href*="#"]').on('click', function(e){
 // });
 
 // swiper slide
-var mySwiper = new Swiper ('.swiper-container', {
+var mySwiper = new Swiper ('.swiper-container__cases', {
   loop: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next__casesright',
+    prevEl: '.swiper-button-prev__casesleft',
   },
 });
 
-var next = $('.swiper-button-next');
-var prev = $('.swiper-button-prev');
+var next = $('.swiper-button-next__casesright');
+var prev = $('.swiper-button-prev__casesleft');
+
+var mySwiper = new Swiper ('.swiper-container__feedback', {
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next__feedbackright',
+    prevEl: '.swiper-button-prev__feedbackleft',
+  },
+});
+
+var next = $('.swiper-button-next__feedbackright');
+var prev = $('.swiper-button-prev__feedbackleft');
+
+var mySwiper = new Swiper ('.swiper-container__news', {
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next__newsright',
+    prevEl: '.swiper-button-prev__newsleft',
+  },
+});
+
+var next = $('.swiper-button-next__newsright');
+var prev = $('.swiper-button-prev__newsleft');
 
 // forms
 $('.modal__form').validate({

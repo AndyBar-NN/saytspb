@@ -1,20 +1,17 @@
 .footer
   &
   &__container
+    display: flex
+    justify-content: center
     margin: auto
-    margin-left: 365px
-    margin-right: 0
-    background: $red url('../img/bg6.png') no-repeat center / cover
-    background-position: top 47% left 422%
-    z-index: 2
   &__hero
     display: flex
+    background: white url('../img/bg6.png') no-repeat center / cover
   &__col-1
+    max-width: 500px
     display: flex
     flex-direction: column
     padding-right: 1rem
-    flex-basis: 33.5%
-    background: white
   &__link
     &
       color: black
@@ -45,6 +42,7 @@
       margin-bottom: 1.7rem
   &__col-2
     display: flex
+    background: $red
   &__title
     font-size: 2.57rem
     font-weight: 500
@@ -59,7 +57,6 @@
     padding: 8rem 10rem 0.75rem 4.4rem
     width: 53.55rem
     max-width: 100%
-    z-index: 1
   &__input
     &
       display: flex

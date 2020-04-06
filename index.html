@@ -49,7 +49,7 @@
               <h2 class="hero__seo">seo</h2>
               <a href="#" class="social social__mail"><img class="icon" src="img/icons/mail.svg" alt="mail"></a>
               <a href="#" class="social social__viber"><img class="icon" src="img/icons/viber.svg" alt="viber"></a>
-              <a href="#" class="social"><img class="icon" src="img/icons/whatsapp.svg" class="social__whatsapp" alt="whatsapp"></a>
+              <a href="#" class="social"><img class="icon" src="img/icons/whatsapp.svg" alt="whatsapp"></a>
             </div>
           </div>
           <h1 class="title hero__title">Продвижение Сайтов&nbsp;<br><span class="hero__title--red">в Санкт-Петербурге</span></h1>
@@ -180,36 +180,33 @@
     <!-- /.services -->
     <div class="price" id="price">
       <div class="container">
-        <div class="price__block">
-          <div class="price__col">
-            <h3 class="price__title">Узнать стоимость</h3>
-            <form action="send.php" method="POST" class="form price__form">
-              <div class="price__input">
-                <label for="user-name" class="label form__label">Имя</label>
-                <input type="text" name="userName" class="input form__input price__input input--light" id="user-name-price" placeholder="Иван Иванов">
-              </div>
-              <div class="price__input">
-                <label for="user-mail" class="label form__label">E-mail</label>
-                <input type="email" name="userEmail" class="input form__input price__input input--light" id="user-email-price" placeholder="ivanov@gmail.com">
-              </div>
-              <div class="price__input">
-                <label id="user-mail" class="label form__label">Адрес веб-сайта</label>
-                <input type="url" name="userLink" class="input form__input price__input input--light" id="user-link-price" placeholder="tatsianapavlenko.ru">
-              </div>
-              <div class="price__input price__input--group">
-                <label for="user-message" class="label form__label">Сообщение</label>
-                <input type="text" name="userMessage" class="input form__input price__input input--light" id="user-message" placeholder="Введите Ваше сообщение">
-              </div>
-              <button class="button price__button">Узнать стоимость</button>
-            </form>
-          </div>
-          <!-- /.price__form -->
-          <div class="price__img">
-            <img src="img/bg4.png" alt="#">
-          </div>
-          <!-- /.price__img -->
+        <div class="price__form">
+          <h3 class="price__title">Узнать стоимость</h3>
+          <form action="send.php" method="POST" class="form price__form">
+            <div class="price__input">
+              <label id="user-name-pricelabel" class="label form__label">Имя</label>
+              <input type="text" name="userName" class="input form__input price__input input--light" id="user-name-priceinput" placeholder="Иван Иванов">
+            </div>
+            <div class="price__input">
+              <label id="user-mail-pricelabel" class="label form__label">E-mail</label>
+              <input type="email" name="userEmail" class="input form__input price__input input--light" id="user-email-priceinput" placeholder="ivanov@gmail.com">
+            </div>
+            <div class="price__input">
+              <label id="user-link-pricelabel" class="label form__label">Адрес веб-сайта</label>
+              <input type="url" name="userLink" class="input form__input price__input input--light" id="user-link-priceinput" placeholder="tatsianapavlenko.ru">
+            </div>
+            <div class="price__input price__input--group">
+              <label id="user-message-pricelabel" class="label form__label">Сообщение</label>
+              <input type="text" name="userMessage" class="input form__input price__input input--light" id="user-message-priceinput" placeholder="Введите Ваше сообщение">
+            </div>
+            <button class="button price__button">Узнать стоимость</button>
+          </form>
         </div>
-        <!-- /.price__block -->
+        <!-- /.price__form -->
+        <div class="price__img">
+          <img src="img/bg4.png" alt="#">
+        </div>
+        <!-- /.price__img -->
       </div>
       <!-- /.container -->
     </div>
@@ -418,20 +415,26 @@
           <div class="col2">
             <div class="swiper-container swiper-container__news">
               <div class="swiper-wrapper swiper-no-swiping">
-                <div class="swiper-slide news__slide news__slide--heading">
-                  <h3 class="news__slide--title">Важнейшие факторы SEO в 2019 году</h3>
-                  <p class="news__slide--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                  <button class="button button__read">Читать далее</button>
+                <div class="swiper-slide news__slide">
+                  <div class="news__heading">
+                    <h3 class="news__head">Важнейшие факторы SEO в 2019 году</h3>
+                    <p class="news__blog">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                    <button class="button button__read">Читать далее</button>
+                  </div>
                 </div>
-                <div class="swiper-slide news__slide news__slide--heading">
-                  <h3 class="news__slide--title">Важнейшие факторы SEO в 2019 году</h3>
-                  <p class="news__slide--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                  <button class="button button__read">Читать далее</button>
+                <div class="swiper-slide news__slide">
+                  <div class="news__heading">
+                    <h3 class="news__head">Важнейшие факторы SEO в 2019 году</h3>
+                    <p class="news__blog">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                    <button class="button button__read">Читать далее</button>
+                  </div>
                 </div>
-                <div class="swiper-slide news__slide news__slide--heading">
-                  <h3 class="news__slide--title">Важнейшие факторы SEO в 2019 году</h3>
-                  <p class="news__slide--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                  <button class="button button__read">Читать далее</button>
+                <div class="swiper-slide news__slide">
+                  <div class="news__heading">
+                    <h3 class="news__head">Важнейшие факторы SEO в 2019 году</h3>
+                    <p class="news__blog">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                    <button class="button button__read">Читать далее</button>
+                  </div>
                 </div>
               </div>
               <!-- /.swiper-wrapper -->
@@ -472,20 +475,20 @@
           <div class="footer__col-2">
             <form action="send.php" method="POST" class="form footer__form">
               <div class="footer__input">
-                <label for="user-name" class="label form__label label--light">Имя</label>
-                <input type="text" name="userName" class="input form__input footer__input input--light" id="user-name-footer" placeholder="Иван Иванов">
+                <label id="user-name-footerlabel" class="label form__label label--light">Имя</label>
+                <input type="text" name="userName" class="input form__input footer__input input--light" id="user-name-footername" placeholder="Иван Иванов">
               </div>
               <div class="footer__input">
-                <label id="user-mail" class="label form__label label--light">E-mail</label>
-                <input type="email" name="userEmail" class="input form__input footer__input input--light" id="user-email-footer" placeholder="ivanov@gmail.com">
+                <label id="user-mail-footerlabel" class="label form__label label--light">E-mail</label>
+                <input type="email" name="userEmail" class="input form__input footer__input input--light" id="user-email-footername" placeholder="ivanov@gmail.com">
               </div>
               <div class="footer__input">
-                <label for="user-phone" class="label form__label label--light">Телефон</label>
-                <input type="tel" name="userPhone" class="input form__input footer__input input--light" id="user-phone-footer" placeholder="+7 999 888-88-88">
+                <label id="user-phone-footerlabel" class="label form__label label--light">Телефон</label>
+                <input type="tel" name="userPhone" class="input form__input footer__input input--light" id="user-phone-footername" placeholder="+7 999 888-88-88">
               </div>
               <div class="footer__input footer__input--group">
-                <label for="user-message" class="label form__label label--light">Сообщение</label>
-                <input type="text" name="userMessage" class="input form__input footer__input input--light" id="user-message" placeholder="Введите Ваше сообщение">
+                <label id="user-message-footerlabel" class="label form__label label--light">Сообщение</label>
+                <input type="text" name="userMessage" class="input form__input footer__input input--light" id="user-message-footername" placeholder="Введите Ваше сообщение">
               </div>
               <button class="button footer__button">Отправить</button>
             </form>
@@ -509,12 +512,12 @@
       <button class="modal__close"></button>
       <form action="send.php" method="POST" class="form modal__form">
         <div class="modal__input">
-          <label for="user-name" class="label form__label modal__label"></label>
-          <input type="text" name="userName" class="input form__input modal__input modal__input--small" id="user-name-modal" placeholder="Ваше имя">
+          <label id="user-name-modallabel" class="label form__label modal__label"></label>
+          <input type="text" name="userName" class="input form__input modal__input modal__input--small" id="user-name-modalinput" placeholder="Ваше имя">
         </div>
         <div class="modal__input">
-          <label for="user-phone" class="label form__label modal__label"></label>
-          <input type="tel" name="userPhone" class="input form__input modal__input modal__input--small" id="user-phone-modal" placeholder="+7 999 888-88-88">
+          <label id="user-phone-modallabel" class="label form__label modal__label"></label>
+          <input type="tel" name="userPhone" class="input form__input modal__input modal__input--small" id="user-phone-modalinput" placeholder="+7 999 888-88-88">
         </div>
         <button class="button modal__button">Отправить</button>
       </form>
