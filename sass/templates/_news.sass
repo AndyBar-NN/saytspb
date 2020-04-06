@@ -61,11 +61,18 @@
       &::after
         display: none
     &-prev__newsleft
-      width: 4.5rem
-      height: 48px
-      background: url('../img/arrow.svg') no-repeat center
+      &
+        left: 1.5rem
+        background: url('../img/arrow.svg') no-repeat center
+      &:hover
+        background: url('../img/arrow-red.png') no-repeat
+        transform: rotate(180deg)
     &-next__newsright
-      width: 15.5rem
-      height: 48px
-      background: url('../img/arrow.svg') no-repeat center
-      transform: rotate(180deg)
+      &
+        left: 7rem
+        width: 10%
+        background: url('../img/arrow.svg') no-repeat center
+        transform: rotate(180deg)
+      &:hover
+        background: url('../img/arrow-red.png') no-repeat
+        transform: rotate(0deg)

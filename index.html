@@ -181,32 +181,34 @@
     <div class="price" id="price">
       <div class="container">
         <div class="price__block">
-          <h3 class="price__title">Узнать стоимость</h3>
-          <form action="send.php" method="POST" class="form price__form">
-            <div class="price__input">
-              <label id="user-name-pricelabel" class="label form__label">Имя</label>
-              <input type="text" name="userName" class="input form__input price__input input--light" id="user-name-priceinput" placeholder="Иван Иванов">
-            </div>
-            <div class="price__input">
-              <label id="user-mail-pricelabel" class="label form__label">E-mail</label>
-              <input type="email" name="userEmail" class="input form__input price__input input--light" id="user-email-priceinput" placeholder="ivanov@gmail.com">
-            </div>
-            <div class="price__input">
-              <label id="user-link-pricelabel" class="label form__label">Адрес веб-сайта</label>
-              <input type="url" name="userLink" class="input form__input price__input input--light" id="user-link-priceinput" placeholder="tatsianapavlenko.ru">
-            </div>
-            <div class="price__input price__input--group">
-              <label id="user-message-pricelabel" class="label form__label">Сообщение</label>
-              <input type="text" name="userMessage" class="input form__input price__input input--light" id="user-message-priceinput" placeholder="Введите Ваше сообщение">
-            </div>
-            <button class="button price__button">Узнать стоимость</button>
-          </form>
+          <div class="price__col">
+            <h3 class="price__title">Узнать стоимость</h3>
+            <form action="send.php" method="POST" class="form price__form">
+              <div class="price__input">
+                <label id="user-name-pricelabel" class="label form__label">Имя</label>
+                <input type="text" name="userName" class="input form__input price__input input--light" id="user-name-priceinput" placeholder="Иван Иванов">
+              </div>
+              <div class="price__input">
+                <label id="user-mail-pricelabel" class="label form__label">E-mail</label>
+                <input type="email" name="userEmail" class="input form__input price__input input--light" id="user-email-priceinput" placeholder="ivanov@gmail.com">
+              </div>
+              <div class="price__input">
+                <label id="user-link-pricelabel" class="label form__label">Адрес веб-сайта</label>
+                <input type="url" name="userLink" class="input form__input price__input input--light" id="user-link-priceinput" placeholder="tatsianapavlenko.ru">
+              </div>
+              <div class="price__input price__input--group">
+                <label id="user-message-pricelabel" class="label form__label">Сообщение</label>
+                <input type="text" name="userMessage" class="input form__input price__input input--light" id="user-message-priceinput" placeholder="Введите Ваше сообщение">
+              </div>
+              <button class="button price__button">Узнать стоимость</button>
+            </form>
+          </div>
+          <div class="price__img">
+            <img src="img/bg4.png" alt="#">
+          </div>
+          <!-- /.price__img -->
         </div>
-        <!-- /.price__form -->
-        <div class="price__img">
-          <img src="img/bg4.png" alt="#">
-        </div>
-        <!-- /.price__img -->
+        <!-- /.price__block -->
       </div>
       <!-- /.container -->
     </div>
@@ -451,60 +453,54 @@
     </div>
     <!-- /.news -->
 
-    <div class="footer" id="footer">
-      <div class="footer__container">
-        <div class="footer__hero">
-          <div class="footer__col-1">
-            <h2 class="footer__title">Остались вопросы?<br> Напишите нам!<br> Отправте Ваше сообщение<br> через форму или <a class="footer__link" href="#">e-mail</a>.</h2>
-            <div class="footer__worktime">
-              <div class="footer__address">
-                <h2 class="footer__address--title">Адресс</h2>
-                <p class="footer__address--text">Город Санкт-Петербург Улица Мурзинская дом 11 +7(812)-992-10-30 info@saytspb.ru</p>
-              </div>
-              <div class="footer__operating">
-                <h3 class="footer__operating--title">Рабочие дни</h3>
-                <p class="footer__operating--text">Понедельник-пятница</p>
-                <h3 class="footer__operating--title">Выходные</h3>
-                <p class="footer__operating--text">Суббота-воскресенье</p>
-                <h3 class="footer__operating--title">09:00-18:00</h3>
-              </div>
-            </div>
-            <!-- /.footer__worktime -->
+    <footer class="footer" id="footer">
+      <div class="footer__col-1">
+        <h2 class="footer__title">Остались вопросы?<br> Напишите нам!<br> Отправте Ваше сообщение<br> через форму или <a class="footer__link" href="#">e-mail</a>.</h2>
+        <div class="footer__worktime">
+          <div class="footer__address">
+            <h2 class="footer__address--title">Адресс</h2>
+            <p class="footer__address--text">Город Санкт-Петербург Улица Мурзинская дом 11 +7(812)-992-10-30 info@saytspb.ru</p>
           </div>
-          <!-- /.footer__col-1 -->
-          <div class="footer__col-2">
-            <form action="send.php" method="POST" class="form footer__form">
-              <div class="footer__input">
-                <label id="user-name-footerlabel" class="label form__label label--light">Имя</label>
-                <input type="text" name="userName" class="input form__input footer__input input--light" id="user-name-footername" placeholder="Иван Иванов">
-              </div>
-              <div class="footer__input">
-                <label id="user-mail-footerlabel" class="label form__label label--light">E-mail</label>
-                <input type="email" name="userEmail" class="input form__input footer__input input--light" id="user-email-footername" placeholder="ivanov@gmail.com">
-              </div>
-              <div class="footer__input">
-                <label id="user-phone-footerlabel" class="label form__label label--light">Телефон</label>
-                <input type="tel" name="userPhone" class="input form__input footer__input input--light" id="user-phone-footername" placeholder="+7 999 888-88-88">
-              </div>
-              <div class="footer__input footer__input--group">
-                <label id="user-message-footerlabel" class="label form__label label--light">Сообщение</label>
-                <input type="text" name="userMessage" class="input form__input footer__input input--light" id="user-message-footername" placeholder="Введите Ваше сообщение">
-              </div>
-              <button class="button footer__button">Отправить</button>
-            </form>
+          <div class="footer__operating">
+            <h3 class="footer__operating--title">Рабочие дни</h3>
+            <p class="footer__operating--text">Понедельник-пятница</p>
+            <h3 class="footer__operating--title">Выходные</h3>
+            <p class="footer__operating--text">Суббота-воскресенье</p>
+            <h3 class="footer__operating--title">09:00-18:00</h3>
           </div>
-          <!-- /.footer__col-2 -->
         </div>
-        <!-- /.footer__hero -->
+        <!-- /.footer__worktime -->
       </div>
-      <!-- /.container -->
+      <!-- /.footer__col-1 -->
+      <div class="footer__col-2">
+        <form action="send.php" method="POST" class="form footer__form">
+          <div class="footer__input">
+            <label id="user-name-footerlabel" class="label form__label label--light">Имя</label>
+            <input type="text" name="userName" class="input form__input footer__input input--light" id="user-name-footername" placeholder="Иван Иванов">
+          </div>
+          <div class="footer__input">
+            <label id="user-mail-footerlabel" class="label form__label label--light">E-mail</label>
+            <input type="email" name="userEmail" class="input form__input footer__input input--light" id="user-email-footername" placeholder="ivanov@gmail.com">
+          </div>
+          <div class="footer__input">
+            <label id="user-phone-footerlabel" class="label form__label label--light">Телефон</label>
+            <input type="tel" name="userPhone" class="input form__input footer__input input--light" id="user-phone-footername" placeholder="+7 999 888-88-88">
+          </div>
+          <div class="footer__input footer__input--group">
+            <label id="user-message-footerlabel" class="label form__label label--light">Сообщение</label>
+            <input type="text" name="userMessage" class="input form__input footer__input input--light" id="user-message-footername" placeholder="Введите Ваше сообщение">
+          </div>
+          <button class="button footer__button">Отправить</button>
+        </form>
+      </div>
+      <!-- /.footer__col-2 -->
+    </footer>
+    <!-- /.footer -->
       <div class="policy footer__policy">
         <img class="policy__logo" src="img/logo.svg" alt="">
         <a href="#hero" class="policy__title">SAYTSPB</a>
         <h4 class="policy__privacy">Copyright © 2019. Все права защищены</h4>
       </div>
-    </div>
-    <!-- /.footer -->
 
   </main>
   <div class="modal">
