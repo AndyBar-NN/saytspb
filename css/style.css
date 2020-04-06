@@ -476,24 +476,25 @@ button {
 
 .hero__seo {
   position: absolute;
-  bottom: 15.5rem;
-  left: -1.58rem;
+  bottom: 22.4rem;
+  left: -22.1rem;
+  text-transform: uppercase;
   letter-spacing: -5px;
   font-size: 12.5rem;
   color: #e3fbdd;
-  margin: 0; }
+  margin: 0;
+  transform: rotate(270deg); }
 
 .hero__icons {
   position: absolute;
-  top: -25.5rem;
+  top: 6rem;
   left: -54.7rem;
-  height: 100vh;
+  height: 10vh;
   display: flex; }
 
 .hero__icons--social {
   display: flex;
   align-items: center;
-  text-transform: uppercase;
   text-decoration: none;
   transform: rotate(270deg); }
 
@@ -808,12 +809,16 @@ button {
   margin-bottom: 2.5rem;
   z-index: 1; }
 
+.price__block {
+  position: relative; }
+
 .price__form {
   display: flex;
   flex-direction: column;
   padding-left: 1.7rem;
   padding-right: 2.35rem;
   max-width: 47.14rem;
+  position: absolute;
   z-index: 1; }
 
 .price__input {
@@ -1048,12 +1053,16 @@ button {
   margin-bottom: 2.5rem;
   z-index: 1; }
 
+.price__block {
+  position: relative; }
+
 .price__form {
   display: flex;
   flex-direction: column;
   padding-left: 1.7rem;
   padding-right: 2.35rem;
   max-width: 47.14rem;
+  position: absolute;
   z-index: 1; }
 
 .price__input {
