@@ -2,17 +2,32 @@
   &
     display: flex
     justify-content: center
-    background: url('../img/bg6.png') no-repeat center / cover
-    z-index: 100
-  &__hero
+    max-width: 1170px
+    margin: auto
+    padding-left: 6.5rem
+    position: relative
+  &::before,&::after
+    position: absolute
+    content: ""
+    height: 567px
+    width: 100%
+  &::after
+    left: 100%
+    top: 0
+    background: $red url('../img/bg6.png') no-repeat left
+    background-size: 50%
+  &::before
+    right: 100%
+    top: 0
+    background-color: white
+  &__block
     display: flex
-
   &__col-1
-    max-width: 500px
-    width: 50%
+    width: 515px
     display: flex
     flex-direction: column
     padding-right: 1rem
+    background-color: white
   &__link
     &
       color: black
@@ -43,10 +58,8 @@
       margin-bottom: 1.7rem
   &__col-2
     &
-      background: $red url('../img/bg6.png') no-repeat center / cover
       display: flex
-      background: $red
-      width: 50%
+      background-color: $red
   &__title
     font-size: 2.57rem
     font-weight: 500
