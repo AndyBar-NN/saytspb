@@ -8,19 +8,20 @@
       margin: auto
       text-align: center
       margin-bottom: 3.7rem
-      margin-right: 14rem
 .services
   &
     background: url('../img/bg3.png') no-repeat
     background-position: center left 62%
-    padding-bottom: 16.3rem
+    padding-bottom: 14rem
   &__hero
     margin-top: 6rem
   &__block
     &
       display: flex
       flex-wrap: wrap
-      align-items: baseline
+  &__col:nth-child(3)
+    &
+      margin-right: 0
   &__col
     &
       width: 355px
@@ -30,7 +31,10 @@
       background-color: white
       padding: 43px 40px 43px 35px
       margin-right: 51px
+      margin-bottom: 2.7rem
     &:hover
+      border: 1px solid white
+      box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.03)
       border-bottom: 6px solid red
     &--title
       width: 273px

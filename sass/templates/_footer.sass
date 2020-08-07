@@ -1,32 +1,21 @@
 .footer
   &
-    display: flex
-    justify-content: center
-    max-width: 1170px
-    margin: auto
-    padding-left: 6.5rem
+    display: grid
+    grid-template-columns: 1fr 1.19fr
     position: relative
-  &::before,&::after
+  &__img
     position: absolute
-    content: ""
-    height: 567px
-    width: 100%
-  &::after
-    left: 100%
-    top: 0
-    background: $red url('../img/bg6.png') no-repeat left
-    background-size: 50%
-  &::before
-    right: 100%
-    top: 0
-    background-color: white
+    left: -9.5%
+    bottom: 6%
   &__block
     display: flex
+    justify-content: flex-end
   &__col-1
-    width: 515px
+    max-width: 515px
     display: flex
     flex-direction: column
     padding-right: 1rem
+    margin-left: 4rem
     background-color: white
   &__link
     &
@@ -56,10 +45,11 @@
       font-size: 1.28rem
       margin-top: 0.1rem
       margin-bottom: 1.7rem
-  &__col-2
-    &
-      display: flex
-      background-color: $red
+  &__block2
+    position: relative
+    background: $red url('../img/bg6.png') no-repeat
+    background-position: 169% 48%
+    background-size: 57%
   &__title
     font-size: 2.57rem
     font-weight: 500
@@ -71,13 +61,12 @@
   &__form
     display: flex
     flex-direction: column
-    padding: 8rem 10rem 0.75rem 4.4rem
-    width: 53.55rem
+    padding: 8rem 5rem 0.75rem 4.4rem
+    max-width: 48.55rem
   &__input
     &
       display: flex
       flex-direction: column
-      flex-basis: 45%
       margin-bottom: 0.75rem
     &--group
       margin-top: -0.45rem
@@ -96,7 +85,6 @@
     flex-direction: column
     align-items: center
 .policy
-  &
   &__logo
     width: 62px
     height: 62px
@@ -120,13 +108,13 @@
       font-weight: 500
       line-height: 37.33px
       margin-left: 1rem
+      max-width: 864px
     &::before
       content: ''
       display: block
       margin: auto
       margin-bottom: 2.75rem
       margin-right: 2.5rem
-      width: 864px
       height: 2px
       background-color: $dark
       border-radius: 30px
