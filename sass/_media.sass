@@ -47,7 +47,7 @@
       height: 102px
   .services__col
     &
-      width: 255px
+      max-width: 255px
       height: auto
       padding: 20px
   .price
@@ -57,7 +57,7 @@
       max-width: 42.7rem
     &__col
       position: relative
-      max-width: 42.7rem
+      width: auto
       background: white
       padding-right: 3.6rem
       margin: auto
@@ -116,6 +116,17 @@
     &__button
       margin-left: auto
 @media screen and (max-width: 755px)
+  .hero
+    &__content
+      padding-bottom: 65rem
+  .data
+    &__chart
+      flex-direction: column
+      margin-top: -53rem
+      max-width: 400px
+  .advantages
+    &__hero
+
   .services
     &__block
       flex-direction: column
@@ -126,6 +137,9 @@
     &__col:nth-child(3)
       margin: auto
       margin-bottom: 2.7rem
+  .swiper-button-prev__feedbackleft, .swiper-button-next__feedbackright
+    bottom: 0
+    top: 86.3%
 @media screen and (max-width: 372px)
   .swiper-button-prev__newsleft
     left: 30%
@@ -140,6 +154,3 @@
   .swiper-button-next__newsright
     left: 60%
     top: 96.5%
-  .swiper-button-prev__feedbackleft, .swiper-button-next__feedbackright
-    bottom: 0
-    top: 78.3%
