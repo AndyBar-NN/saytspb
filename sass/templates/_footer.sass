@@ -1,83 +1,227 @@
+// .footer
+//   &
+//     display: grid
+//     grid-template-columns: 1fr 1.19fr
+//     position: relative
+//   &__img
+//     position: absolute
+//     left: -9.5%
+//     bottom: 6%
+//   &__block
+//     display: flex
+//     justify-content: flex-end
+//   &__col-1
+//     max-width: 515px
+//     display: flex
+//     flex-direction: column
+//     padding-right: 1rem
+//     margin-left: 4rem
+//     background-color: white
+//   &__link
+//     &
+//       color: black
+//     &:hover
+//       color: red
+//   &__address
+//     &
+//       display: flex
+//       flex-direction: column
+//       flex-basis: 48.5%
+//       margin-right: 0.6rem
+//     &--title
+//       font-size: 1.71rem
+//       margin: 0
+//     &--text
+//       font-size: 1.28rem
+//       font-weight: 300
+//       line-height: 30.33px
+//       margin-top: 0.85rem
+//   &__operating
+//     &--title
+//       font-size: 1.28rem
+//       margin-top: 0.3rem
+//       margin-bottom: 0
+//     &--text
+//       font-size: 1.28rem
+//       margin-top: 0.1rem
+//       margin-bottom: 1.7rem
+//   &__block2
+//     position: relative
+//     background: $red url('../img/bg6.png') no-repeat
+//     background-position: 169% 48%
+//     background-size: 57%
+//   &__title
+//     font-size: 2.57rem
+//     font-weight: 500
+//     line-height: 44px
+//     margin-top: 6.28rem
+//     margin-bottom: 3rem
+//   &__worktime
+//     display: flex
+//   &__form
+//     display: flex
+//     flex-direction: column
+//     padding: 8rem 5rem 0.75rem 4.4rem
+//     max-width: 48.55rem
+//   &__input
+//     &
+//       display: flex
+//       flex-direction: column
+//       margin-bottom: 0.75rem
+//     &--group
+//       margin-top: -0.45rem
+//   &__button
+//     margin: auto
+//     margin-top: 1.45rem
+//     margin-bottom: 6.45rem
+//     margin-left: 0
+//     padding: 14px 66px 17px 66px
+//     background: white
+//     color: $red
 .footer
-  &
-    display: grid
-    grid-template-columns: 1fr 1.19fr
-    position: relative
+  position: relative
+  overflow-x: hidden
+  overflow-y: hidden
   &__img
+    display: flex
     position: absolute
-    left: -9.5%
-    bottom: 6%
-  &__block
-    display: flex
-    justify-content: flex-end
-  &__col-1
-    max-width: 515px
-    display: flex
-    flex-direction: column
-    padding-right: 1rem
-    margin-left: 4rem
-    background-color: white
-  &__link
-    &
-      color: black
-    &:hover
-      color: red
-  &__address
-    &
-      display: flex
-      flex-direction: column
-      flex-basis: 48.5%
-      margin-right: 0.6rem
-    &--title
-      font-size: 1.71rem
-      margin: 0
-    &--text
-      font-size: 1.28rem
-      font-weight: 300
-      line-height: 30.33px
-      margin-top: 0.85rem
-  &__operating
-    &--title
-      font-size: 1.28rem
-      margin-top: 0.3rem
-      margin-bottom: 0
-    &--text
-      font-size: 1.28rem
-      margin-top: 0.1rem
-      margin-bottom: 1.7rem
-  &__block2
+    height: 100%
+    width: 100%
+    &--box1
+      background-color: #fff
+      width: 100vw
+    &--box2
+      position: relative
+      background-color: #ff5a3c
+      width: 100vw
+      overflow-y: hidden
+      overflow-x: hidden
+      &-circle1
+        position: absolute
+        bottom: -87px
+        right: -87px
+      &-circle2
+        position: absolute
+        bottom: -178px
+        right: 0px
+      &-circle3
+        position: absolute
+        top: -145px
+        right: -320px
+      &-circle4
+        position: absolute
+        top: 217px
+        right: 45px
+      &-circle5
+        position: absolute
+        top: 82px
+        right: 203px
+        &-x1
+          width: 35px
+          height: 6px
+          border-radius: 20px
+          transform: rotate(30deg)
+          background-color: #ffffff
+          position: relative
+          top: 0
+        &-x2
+          width: 35px
+          height: 6px
+          border-radius: 20px
+          transform: rotate(-60deg)
+          background-color: #ffffff
+          position: relative
+          top: -7px
+  &__wrapper
     position: relative
-    background: $red url('../img/bg6.png') no-repeat
-    background-position: 169% 48%
-    background-size: 57%
-  &__title
-    font-size: 2.57rem
-    font-weight: 500
-    line-height: 44px
-    margin-top: 6.28rem
-    margin-bottom: 3rem
-  &__worktime
     display: flex
-  &__form
-    display: flex
-    flex-direction: column
-    padding: 8rem 5rem 0.75rem 4.4rem
-    max-width: 48.55rem
-  &__input
-    &
+    margin: 0 auto
+    height: 570px
+    max-width: 1227px
+    padding-left: 30px
+    padding-right: 30px
+  &__block
+    width: 100vw
+    &--line
+      position: absolute
+      background-image: url(../img/spiral.png)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      width: 218px
+      height: 38px
+      bottom: 40px
+      right: 495px
+    &--one
       display: flex
-      flex-direction: column
-      margin-bottom: 0.75rem
-    &--group
-      margin-top: -0.45rem
-  &__button
-    margin: auto
-    margin-top: 1.45rem
-    margin-bottom: 6.45rem
-    margin-left: 0
-    padding: 14px 66px 17px 66px
-    background: white
-    color: $red
+      position: relative
+      justify-content: center
+      padding-top: 70px
+      &-title
+        margin-bottom: 50px
+        h2 
+          font-size: 36px
+          font-weight: 400
+          display: inline-block
+          span
+            display: block
+        &-link
+          font-size: 36px
+          color: #ff5a3c
+          display: inline-block
+          margin-left: 10px
+      &-info
+        display: flex
+        justify-content: space-between
+        &-box
+          max-width: 235px
+          &-wrap
+            padding-bottom: 15px
+          &-title1
+            font-size: 24px
+            font-weight: 500
+            line-height: 40px
+          &-title2
+            font-size: 18px
+            font-weight: 400
+            line-height: 25px
+          &-title3
+            font-size: 18px
+            font-weight: 500
+    &--two
+      display: flex
+      justify-content: flex-start
+      position: relative
+      padding-top: 115px
+      padding-left: 62px
+      &-input
+        display: flex
+        flex-direction: column
+        margin-bottom: 20px
+      &-title
+        color: #fff
+        font-size: 18px
+        font-weight: 400
+      &-button
+        margin: auto
+        margin-top: 1.45rem
+        margin-bottom: 6.45rem
+        margin-left: 0
+        padding: 14px 66px 17px 66px
+        background: white
+        color: $red
+        border-radius: 30px
+    &--col
+      max-width: 470px
+  &__form--input
+    max-width: 550px
+    width: 100vw
+
+
+
+
+
+    // ==========================================================
   &__policy
     background: url('../img/bg-footer.png') no-repeat center
     height: 320px
