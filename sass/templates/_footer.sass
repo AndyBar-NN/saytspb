@@ -1,8 +1,6 @@
 .footer
   &
-    display: grid
-    grid-template-columns: 1fr 1.19fr
-    position: relative
+    display: flex
   &__img
     position: absolute
     left: -9.5%
@@ -10,6 +8,7 @@
   &__block
     display: flex
     justify-content: flex-end
+    width: 85vw
   &__col-1
     max-width: 515px
     display: flex
@@ -46,6 +45,7 @@
       margin-top: 0.1rem
       margin-bottom: 1.7rem
   &__block2
+    width: 100vw
     position: relative
     background: $red url('../img/bg6.png') no-repeat
     background-position: 169% 48%
@@ -108,7 +108,7 @@
       font-weight: 500
       line-height: 37.33px
       margin-left: 1rem
-      max-width: 864px
+      width: 901px
     &::before
       content: ''
       display: block

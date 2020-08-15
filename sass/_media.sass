@@ -30,12 +30,88 @@
       margin-top: 10.55rem
     &__title
       width: auto
-    &__text
-      width: auto
     &__seo
       display: none
     &__icons
       display: none
+
+  // start burger
+  .menu
+    &__button
+      &
+        display: block
+        position: absolute
+        right: 35px
+        top: 40px
+        width: 30px
+        height: 2px
+        background-color: #000
+        border: none
+        cursor: pointer
+        z-index: 2
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 30px
+        height: 2px
+        background-color: #000
+        transition: transform 0.2s
+        margin-top: -7px
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 30px
+        height: 2px
+        background-color: #000
+        transition: transform 0.2s
+        margin-top: 7px
+      &--active
+        &
+          height: 0
+        &:before
+          transform: rotate(45deg)
+          margin-top: 0
+        &:after
+          transform: rotate(-45deg)
+          margin-top: 0
+    &__contacts
+      margin-top: 20px
+    &__nav
+      margin: auto
+      padding-top: 7rem
+      display: flex
+      flex-direction: column
+      align-items: center
+  .phone
+    font-size: 14px
+  .nav
+    &
+      display: none
+      flex-direction: column
+      position: absolute
+      right: 0
+      top: 0
+      background-color: $lime
+      min-width: 250px
+      padding-bottom: 40px
+      z-index: 1
+    &--active
+      display: flex
+    &__item
+      &
+        margin: auto
+        margin-bottom: 10px
+        text-align: center
+      &::after
+        display: none
+  // end burger
+
   .data__video--play
     &
       width: 73px
@@ -50,6 +126,9 @@
       max-width: 255px
       height: auto
       padding: 20px
+    &:hover
+      border: 1px solid #c9c8c8
+      box-shadow: none
   .price
     &__img
       display: none
@@ -87,17 +166,28 @@
       margin: auto
   .swiper-button-prev__newsleft
     left: 30%
-    top: 83.5%
+    top: 91.5%
   .swiper-button-next__newsright
     left: 60%
-    top: 83.5%
-  .swiper-button-prev__newsleft:hover, .swiper-button-next__newsright:hover
-    background: none
+    top: 91.5%
+  .swiper-button-prev__newsleft
+    &:hover
+      left: 30%
+      top: 91.5%
+      background: url('../img/arrow.svg') no-repeat center
+      transform: rotate(0deg)
+  .swiper-button-next__newsright
+    &:hover
+      left: 60%
+      top: 91.5%
+      background: url('../img/arrow.svg') no-repeat center
+      transform: rotate(180deg)
   .footer
     &
       display: block
     &__block
       justify-content: center
+      width: auto
     &__col-1
       max-width: none
     &__title
@@ -110,11 +200,15 @@
       display: none
     &__block2
       background: $red
+      width: auto
     &__col-2
       margin: auto
       max-width: 48.55rem
     &__button
       margin-left: auto
+  .policy__privacy
+    &
+      width: auto
 @media screen and (max-width: 755px)
   .hero
     &__content
@@ -140,10 +234,10 @@
 @media screen and (max-width: 372px)
   .swiper-button-prev__newsleft
     left: 30%
-    top: 90.5%
+    top: 91.5%
   .swiper-button-next__newsright
     left: 60%
-    top: 90.5%
+    top: 91.5%
 @media screen and (max-width: 326px)
   .swiper-button-prev__newsleft
     left: 30%
@@ -151,3 +245,11 @@
   .swiper-button-next__newsright
     left: 60%
     top: 96.5%
+  .swiper-button-prev__newsleft
+    &:hover
+      left: 30%
+      top: 96.5%
+  .swiper-button-next__newsright
+    &:hover
+      left: 60%
+      top: 96.5%

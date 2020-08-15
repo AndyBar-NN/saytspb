@@ -32,6 +32,13 @@ $('a[href*="#"]').on('click', function(e){
   e.preventDefault();
 });
 
+var menuButton = document.querySelector('.menu__button');
+var menu = document.querySelector('.nav');
+menuButton.addEventListener('click', function() {
+  menuButton.classList.toggle('menu__button--active');
+  menu.classList.toggle('nav--active');
+});
+
 // $(document).ready(function() {
 //  var scrollBtn = $('#scroll_top');
 //  $(window).scroll (function () {
