@@ -9,7 +9,7 @@
  * @author    Jim Jagielski (jimjag) <jimjag@gmail.com>
  * @author    Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author    Brent R. Matzelle (original founder)
- * @copyright 2012 - 2019 Marcus Bointon
+ * @copyright 2012 - 2020 Marcus Bointon
  * @copyright 2010 - 2012 Jim Jagielski
  * @copyright 2004 - 2009 Andy Prevost
  * @license   http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
@@ -441,6 +441,8 @@ class PHPMailer
      * Only supported in `mail` and `sendmail` transports, not in SMTP.
      *
      * @var bool
+     *
+     * @deprecated 6.0.0 PHPMailer isn't a mailing list manager!
      */
     public $SingleTo = false;
 
@@ -745,7 +747,7 @@ class PHPMailer
      *
      * @var string
      */
-    const VERSION = '6.1.5';
+    const VERSION = '6.1.7';
 
     /**
      * Error severity: message only, continue processing.
@@ -897,6 +899,7 @@ class PHPMailer
         switch ($this->Debugoutput) {
             case 'error_log':
                 //Don't output, just log
+                /** @noinspection ForgottenDebugOutputInspection */
                 error_log($str);
                 break;
             case 'html':
@@ -1307,7 +1310,7 @@ class PHPMailer
             $patternselect = static::$validator;
         }
         if (is_callable($patternselect)) {
-            return $patternselect($address);
+            return call_user_func($patternselect, $address);
         }
         //Reject line breaks in addresses; it's valid RFC5322, but not RFC5321
         if (strpos($address, "\n") !== false || strpos($address, "\r") !== false) {
@@ -1348,7 +1351,7 @@ class PHPMailer
                 /*
                  * This is the pattern used in the HTML5 spec for validation of 'email' type form input elements.
                  *
-                 * @see http://www.whatwg.org/specs/web-apps/current-work/#e-mail-state-(type=email)
+                 * @see https://html.spec.whatwg.org/#e-mail-state-(type=email)
                  */
                 return (bool) preg_match(
                     '/^[a-zA-Z0-9.!#$%&\'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}' .
@@ -2000,7 +2003,12 @@ class PHPMailer
             }
             $host = $hostinfo[2];
             $port = $this->Port;
-            if (array_key_exists(3, $hostinfo) && is_numeric($hostinfo[3]) && $hostinfo[3] > 0 && $hostinfo[3] < 65536) {
+            if (
+                array_key_exists(3, $hostinfo) &&
+                is_numeric($hostinfo[3]) &&
+                $hostinfo[3] > 0 &&
+                $hostinfo[3] < 65536
+            ) {
                 $port = (int) $hostinfo[3];
             }
             if ($this->smtp->connect($prefix . $host, $port, $this->Timeout, $options)) {
@@ -2086,6 +2094,7 @@ class PHPMailer
             'se' => 'sv',
             'rs' => 'sr',
             'tg' => 'tl',
+            'am' => 'hy',
         ];
 
         if (isset($renamed_langcodes[$langcode])) {
@@ -2606,7 +2615,7 @@ class PHPMailer
             $altBodyEncoding = static::ENCODING_QUOTED_PRINTABLE;
         }
         //Use this as a preamble in all multipart message types
-        $mimepre = 'This is a multi-part message in MIME format.' . static::$LE  . static::$LE;
+        $mimepre = 'This is a multi-part message in MIME format.' . static::$LE . static::$LE;
         switch ($this->message_type) {
             case 'inline':
                 $body .= $mimepre;
@@ -2974,7 +2983,6 @@ class PHPMailer
             if ('' === $name) {
                 $name = $filename;
             }
-
             if (!$this->validateEncoding($encoding)) {
                 throw new Exception($this->lang('encoding') . $encoding);
             }
@@ -3063,9 +3071,9 @@ class PHPMailer
                 //Only include a filename property if we have one
                 if (!empty($name)) {
                     $mime[] = sprintf(
-                        'Content-Type: %s; name="%s"%s',
+                        'Content-Type: %s; name=%s%s',
                         $type,
-                        $this->encodeHeader($this->secureHeader($name)),
+                        static::quotedString($this->encodeHeader($this->secureHeader($name))),
                         static::$LE
                     );
                 } else {
@@ -3085,24 +3093,14 @@ class PHPMailer
                     $mime[] = 'Content-ID: <' . $this->encodeHeader($this->secureHeader($cid)) . '>' . static::$LE;
                 }
 
-                // If a filename contains any of these chars, it should be quoted,
-                // but not otherwise: RFC2183 & RFC2045 5.1
-                // Fixes a warning in IETF's msglint MIME checker
-                // Allow for bypassing the Content-Disposition header totally
+                // Allow for bypassing the Content-Disposition header
                 if (!empty($disposition)) {
                     $encoded_name = $this->encodeHeader($this->secureHeader($name));
-                    if (preg_match('/[ ()<>@,;:"\/\[\]?=]/', $encoded_name)) {
-                        $mime[] = sprintf(
-                            'Content-Disposition: %s; filename="%s"%s',
-                            $disposition,
-                            $encoded_name,
-                            static::$LE . static::$LE
-                        );
-                    } elseif (!empty($encoded_name)) {
+                    if (!empty($encoded_name)) {
                         $mime[] = sprintf(
                             'Content-Disposition: %s; filename=%s%s',
                             $disposition,
-                            $encoded_name,
+                            static::quotedString($encoded_name),
                             static::$LE . static::$LE
                         );
                     } else {
@@ -3162,6 +3160,7 @@ class PHPMailer
             if ($this->exceptions) {
                 throw $exc;
             }
+
             return '';
         }
     }
@@ -3998,7 +3997,8 @@ class PHPMailer
      * @param string        $message  HTML message string
      * @param string        $basedir  Absolute path to a base directory to prepend to relative paths to images
      * @param bool|callable $advanced Whether to use the internal HTML to text converter
-     *                                or your own custom converter @return string $message The transformed message Body
+     *                                or your own custom converter
+     * @return string The transformed message body
      *
      * @throws Exception
      *
@@ -4122,7 +4122,7 @@ class PHPMailer
     public function html2text($html, $advanced = false)
     {
         if (is_callable($advanced)) {
-            return $advanced($html);
+            return call_user_func($advanced, $html);
         }
 
         return html_entity_decode(
@@ -4724,6 +4724,28 @@ class PHPMailer
     public static function hasLineLongerThanMax($str)
     {
         return (bool) preg_match('/^(.{' . (self::MAX_LINE_LENGTH + strlen(static::$LE)) . ',})/m', $str);
+    }
+
+    /**
+     * If a string contains any "special" characters, double-quote the name,
+     * and escape any double quotes with a backslash.
+     *
+     * @param string $str
+     *
+     * @return string
+     *
+     * @see RFC822 3.4.1
+     */
+    public static function quotedString($str)
+    {
+        if (preg_match('/[ ()<>@,;:"\/\[\]?=]/', $str)) {
+            //If the string contains any of these chars, it must be double-quoted
+            //and any double quotes must be escaped with a backslash
+            return '"' . str_replace('"', '\\"', $str) . '"';
+        }
+
+        //Return the string untouched, it doesn't need quoting
+        return $str;
     }
 
     /**
