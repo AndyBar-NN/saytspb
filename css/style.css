@@ -957,6 +957,10 @@ button {
   padding: 16px 65px 15px 65px; }
 
 .swiper-container__cases {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
   margin-top: 3.35rem; }
 
 .swiper-button-prev__casesleft, .swiper-button-next__casesright {
@@ -1043,7 +1047,11 @@ button {
   padding: 16px 65px 16px 65px; }
 
 .swiper-container__feedback {
-  margin-top: 5.55rem; }
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 5.55rem;
+  position: relative; }
 
 .swiper-button-prev__feedbackleft, .swiper-button-next__feedbackright {
   bottom: 0;
@@ -1164,6 +1172,12 @@ button {
   height: 339px;
   right: 0.25rem;
   top: 52.8%; }
+
+.swiper-container__news {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
 
 .button__read {
   margin-top: 1.65rem;
